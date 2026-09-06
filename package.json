@@ -1,0 +1,20 @@
+{
+  "name": "wxserver",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Self-hosted WeChat MP push relay — ServerChan-compatible API on Vercel",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "keywords": [
+    "wechat",
+    "serverchan",
+    "vercel",
+    "webhook",
+    "push"
+  ]
+}

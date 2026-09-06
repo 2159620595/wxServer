@@ -1,0 +1,105 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #0d1117;
+  color: #e6edf3;
+  padding: 24px 16px 48px;
+}
+
+.wrap { max-width: 840px; margin: 0 auto; }
+
+header { margin-bottom: 24px; }
+
+h1 { margin: 0; font-size: 26px; }
+
+.sub { margin: 6px 0 0; color: #8b949e; font-size: 14px; }
+
+section {
+  margin-bottom: 18px;
+  padding: 20px;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  background: #161b22;
+}
+
+h2 { margin: 0 0 12px; font-size: 16px; }
+
+.muted { color: #8b949e; font-size: 13px; margin: 0 0 12px; }
+
+.hint { font-size: 12px; color: #6e7681; margin: 12px 0 0; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.card {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #30363d;
+  background: #0d1117;
+}
+
+.card.on { border-color: #3fb950; }
+.card.off { opacity: 0.7; }
+
+.card-name { font-weight: 600; font-size: 14px; }
+.card-status { font-size: 12px; margin-top: 6px; color: #8b949e; }
+.card.on .card-status { color: #3fb950; }
+.card-env { font-size: 11px; color: #6e7681; margin-top: 8px; word-break: break-all; }
+
+.row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+
+input {
+  flex: 1;
+  min-width: 180px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #30363d;
+  background: #0d1117;
+  color: #e6edf3;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #238636;
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.badge.ok { background: rgba(63, 185, 80, 0.15); color: #3fb950; }
+.badge.bad { background: rgba(248, 81, 73, 0.15); color: #f85149; }
+
+.msg { min-height: 20px; font-size: 13px; margin: 8px 0 0; }
+.msg.ok { color: #3fb950; }
+.msg.err { color: #f85149; }
+
+pre {
+  margin: 0;
+  padding: 14px;
+  border-radius: 8px;
+  background: #0d1117;
+  color: #79c0ff;
+  font-size: 12px;
+  overflow-x: auto;
+}
+
+code { font-family: Consolas, monospace; font-size: 12px; }
+
+a { color: #58a6ff; }

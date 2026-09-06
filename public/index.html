@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>wxServer 控制台</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>wxServer</h1>
+      <p class="sub">微信公众号推送 · Server酱兼容 API · Vercel</p>
+    </header>
+
+    <section>
+      <h2>服务状态</h2>
+      <div id="badge" class="badge bad">检测中…</div>
+      <p id="api-line" class="muted"></p>
+    </section>
+
+    <section>
+      <h2>推送通道</h2>
+      <p class="muted">在 Vercel 环境变量中配置，Redeploy 后生效。</p>
+      <div id="channels" class="grid"></div>
+    </section>
+
+    <section>
+      <h2>发送测试</h2>
+      <p class="muted">填写 Vercel 中的 <code>CONSOLE_TOKEN</code> 后点击测试。</p>
+      <div class="row">
+        <input id="token" type="password" placeholder="CONSOLE_TOKEN" autocomplete="off" />
+        <button id="btn-test" type="button" disabled>发送测试</button>
+      </div>
+      <p id="test-msg" class="msg"></p>
+      <p class="hint">
+        查 openid：<code>GET /api/wechat-openid?token=...</code>
+        · <a href="/docs/WECHAT_MP.md">公众号配置文档</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>调用示例</h2>
+      <pre id="curl"></pre>
+    </section>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
