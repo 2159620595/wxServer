@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
     return sendJson(res, e.status || 401, { code: e.status || 401, message: e.message });
   }
 
-  const { title, desp } = normalizePushPayload(parseBody(req));
+  const { title, desp, remark } = normalizePushPayload(parseBody(req));
   if (!title) {
     return sendJson(res, 400, { code: 400, message: "缺少 title" });
   }
@@ -30,7 +30,7 @@ module.exports = async (req, res) => {
     });
   }
 
-  const { pushed, errors } = await dispatchAll(title, desp);
+  const { pushed, errors } = await dispatchAll(title, desp, remark);
   if (!pushed.length) {
     return sendJson(res, 502, { code: 502, message: errors.join("; ") || "推送失败" });
   }
