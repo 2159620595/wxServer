@@ -15,7 +15,14 @@ wxServer 通过 **模板消息** 将通知推到 **关注公众号的个人微�
 
 ## 2. 添加模板
 
-测试号页面 → **模板消息接口** → 新增（**不要用静态数字**，要用变量）：
+测试号页面 → **模板消息接口** → 新增。
+
+**完整步骤见 [`TEMPLATE_SETUP.md`](./TEMPLATE_SETUP.md)**，复制文件 [`../template/seckill-notify.txt`](../template/seckill-notify.txt)。
+
+要点：
+
+1. **模板标题**填 `腾讯云秒杀`（卡片顶部显示，**不要填 `1`**）
+2. **模板内容**粘贴：
 
 ```
 {{first.DATA}}
@@ -23,25 +30,15 @@ wxServer 通过 **模板消息** 将通知推到 **关注公众号的个人微�
 {{remark.DATA}}
 ```
 
-**不要**写成下面这样（`1`、日期写死的话，推送标题不会变，只会改「内容」）：
-
-```
-1
-9月6日
-内容：{{keyword1.DATA}}
-```
-
 字段对应关系：
 
 | 模板字段 | 推送参数 | 示例 |
 |---------|---------|------|
 | `first` | `title` | 腾讯云秒杀 · 抢购失败 |
-| `keyword1` | `desp` | 下午场 15:00:00 没抢到（已售罄） |
+| `keyword1` | `desp` | 下午15:00 没抢到（已售罄） |
 | `remark` | `remark` | 请关注下一场开抢时间 |
 
-记下 **模板 ID**。
-
-字段名不同时，在 Vercel 设置 `WECHAT_MP_FIELD_TITLE` / `BODY` / `REMARK`。
+记下 **模板 ID**，更新 Vercel 的 `WECHAT_MP_TEMPLATE_ID`。
 
 ## 3. 获取 openid
 
